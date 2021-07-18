@@ -64,14 +64,13 @@ public class Tripulante {
         this.nota3 = nota3; 
     }
 
-    public void setnumeroIdentificacion() {
+    public void setNumeroIdentificacion(float numeroIdentificacion) {
         this.numeroIdentificacion = numeroIdentificacion;
     }
 
-    public void setEmail() {
+    public void setEmail(String email) {
         this.email = email;
     }
-
 
     public double getAverage() {
         return (nota1 + nota2 + nota3) / 3;      
@@ -85,10 +84,6 @@ public class Tripulante {
         } else {
             return nota3;
         } 
-    }
-
-    public double getAverage() {
-        return (nota1 + nota2 + nota3) / 3;      
     }
 
     public double getLowNote() {
