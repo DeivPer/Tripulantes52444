@@ -16,4 +16,16 @@ public class Formador {
     public int getCodigo() {
         return codigo;
     }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+
+
 }

@@ -1,14 +1,19 @@
 package model;
 
+import java.util.ArrayList;
 /**
  * Tripulante
  */
 
 
 public class Tripulante {
-    /**
-     * Atributos
-     */
+    
+    /*Constantes*/
+
+    public final static double NOTA_MAXIMA = 5.0;
+    
+
+    /* Atributos*/
 
     private String nombre;
     private int id;
@@ -17,9 +22,33 @@ public class Tripulante {
     private double nota3;
     private float numeroIdentificacion;
     private String email;
+    private ArrayList<Curso> cursos;
+
+    /*COnstructor*/
+
+    public Tripulante() {
+        super();
+    }
+
+    public Tripulante(String pnombre, int pid, double pnota1, double pnota2, double pnota3, float pnumeroIdentificacion, String pemail) {
+        super();
+        this.nombre =  pnombre;
+        this.id = pid;
+        this.nota1 = pnota1;
+        this.nota2 = pnota2;
+        this.nota3 = pnota3;
+        this.numeroIdentificacion = pnumeroIdentificacion;
+        this.email = pemail;
+        cursos = new ArrayList<>();
+        
+    }
 
     /** getters */
     
+    public ArrayList<Curso> getCursos() {
+        return cursos;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -55,13 +84,25 @@ public class Tripulante {
         this.id = id;
     }
     public void setNota1(double nota1) {
+        if (nota1 > NOTA_MAXIMA) {
+            System.out.println("No se pudo agregar, la nota maxima es " + NOTA_MAXIMA);
+        } else {
         this.nota1 = nota1;
+        }
     }
     public void setNota2(double nota2) {
-        this.nota2 = nota2;
+        if (nota2 > NOTA_MAXIMA) {
+            System.out.println("No se pudo agregar, la nota maxima es " + NOTA_MAXIMA);
+        } else {
+            this.nota2 = nota2;
+        }
     }
     public void setNota3(double nota3) {
-        this.nota3 = nota3; 
+        if (nota3 >NOTA_MAXIMA) {
+            System.out.println("No se pudo agregar, la nota maxima es " + NOTA_MAXIMA);
+        } else {
+            this.nota3 = nota3;    
+        }
     }
 
     public void setNumeroIdentificacion(float numeroIdentificacion) {
